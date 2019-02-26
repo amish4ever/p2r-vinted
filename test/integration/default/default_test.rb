@@ -1,22 +1,8 @@
-# # encoding: utf-8
-
 # Inspec test for recipe p2r-vinted::default
-pack_array = [
-'redis',
-'postfix',
-'mailx']
-
-serv_array = [
-'redis',
-'postfix']
-
-script_array = [
-'store_mail.py',
-'get_mail.py']
-
-mail_array = [
-'main.cf',
-'master.cf']
+pack_array = %w[redis postfix mailx]
+serv_array = %w[redis postfix]
+script_array = %w[store_mail.py get_mail.py]
+mail_array = %w[main.cf master.cf]
 
 pack_array.each do |this_pack|
   describe package(this_pack) do

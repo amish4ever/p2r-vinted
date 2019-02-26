@@ -1,4 +1,4 @@
-package [ 'postfix', 'mailx' ] do
+package ['postfix', 'mailx'] do
   action :install
 end
 
@@ -15,7 +15,7 @@ end
 service 'redis' do
   supports status: true, restart: true, reload: true
   action :enable
-end  
+end
 
 package 'python-pip' do
   notifies :run, 'execute[pip install redis]'
